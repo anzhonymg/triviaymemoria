@@ -25,9 +25,24 @@
       height: 100%;
       background: #000000;
     }
+    #scoreDisplay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-size: 20px;
+      z-index: 100;
+    }
   </style>
+  <script type="text/javascript">
+    function ReceiveScoreFromUnity(score) {
+      console.log("Score received from Unity: " + score);
+      document.getElementById("scoreDisplay").innerText = "Score: " + score;
+    }
+  </script>
 </head>
 <body>
+  <div id="scoreDisplay">Score: 0</div>
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas"></canvas>
     <div id="unity-loading-bar">
